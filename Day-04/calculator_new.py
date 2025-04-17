@@ -1,15 +1,29 @@
-def addition(num1, num2):
-    add = num1 + num2
-    return add
+import sys
 
-def substraction(num1, num2):
-    sub = num1 - num2
-    return sub  
+def addition(num1, num2):
+    return num1 + num2
+
+def subtraction(num1, num2):
+    return num1 - num2  
 
 def multiplication(num1, num2):
-    mul = num1 * num2
-    return mul
+    return num1 * num2
 
-# print (addition(20, 10))
-# print (substraction(20, 10))
-# print (multiplication(20, 10))
+if __name__ == "__main__":
+    if len(sys.argv) != 4:
+        print("Usage: python calculator_new.py <num1> <num2> <operation>")
+        print("Example: python calculator_new.py 55 45 add")
+        sys.exit(1)
+
+    num1 = int(sys.argv[1])
+    num2 = int(sys.argv[2])
+    operation = sys.argv[3].lower()
+
+    if operation == "add":
+        print("Result:", addition(num1, num2))
+    elif operation == "sub":
+        print("Result:", subtraction(num1, num2))
+    elif operation == "mul":
+        print("Result:", multiplication(num1, num2))
+    else:
+        print("Unsupported operation. Use 'add', 'sub', or 'mul'.")

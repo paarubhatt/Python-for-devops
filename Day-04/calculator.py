@@ -1,5 +1,5 @@
-num1 = 20
-num2 = 10
+num1 = 78.99
+num2 = 11.01
 
 addition = num1 + num2
 print ("value of addition "+ str (addition))
